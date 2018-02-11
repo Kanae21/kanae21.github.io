@@ -7,15 +7,13 @@
     <meta name="keywords" content="Web, デザイン, デザイナー, ポートフォリオ, Web制作">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script>FontAwesomeConfig = { autoReplaceSvg: 'nest' }
-    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body><!--header-->
-    <header><a href="#contact" class="button-contact"><i aria-hidden="true" class="fas fa-envelope" aria-label="お問い合わせ"></i></a>
+    <header><a href="#contact" class="button-contact"><i aria-hidden="true" class="fa fa-envelope" aria-label="お問い合わせ"></i></a>
       <div class="profile">
         <h1 class="site-title abel uppercase text-center">Web Designer <span>Kanae</span></h1><img src="./images/img_profile.jpg" alt="プロフィール写真" width="140" height="140" class="block-center profile-icon">
-        <p>東京都在住のWebデザイナー、かなえです。オンラインスクールでWeb制作について学び、アパレル業界から憧れていたWebデザイナーへと転職活動中です。これからさらにWeb制作の技術や知識を身につけて、Webサイト運用や問題解決のアドバイスもできるデザイナーになりたいと思っています。</p>
+        <p>富山在住のWebデザイナー、かなえです。オンラインスクールでWeb制作について学び、転職活動中です。</p>
       
       </div>
     </header><!--contents-->
@@ -23,30 +21,35 @@
       <section id="skills">
         <h2 class="text-center">Skills</h2>
         <div class="container">
-          <div class="skill-box">
-
-                <i class="fas fa-desktop" data-fa-mask=""></i>
+          <div class="skill-box desktop">
+                <i class="fa fa-desktop" aria-hidden="true"></i>
             <h3 class="text-center">Web</h3>
             <p>HTML/CSSでのコーディングができます。JavaScript、PHP、WordPressも現在勉強中です。</p>
           </div>
-          <div class="skill-box"><i class="fas fa-pencil-alt"></i>
+          <div class="skill-box pencil"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
             <h3 class="text-center">Illust</h3>
-            <p>キャラクターデザインなどのイラスト制作が得意です。専門学校在籍のときにXXの特別賞を受賞しました。</p>
+            <p>美術大学で4年間絵画を学んでおり、家族のイラストが得意です。</p>
           </div>
-          <div class="skill-box"><i class="fas fa-comment"></i>
+          <div class="skill-box"><i class="fa fa-comment" aria-hidden="true"></i>
             <h3 class="text-center">English</h3>
             <p>16歳になるまでずっとアメリカにいたので英語が得意です。Webデザインも海外の記事を読んで勉強しています。</p>
           </div>
         </div>
-      </section><!--works-->
+      </section><!--skills-->
       <section id="works">
         <h2 class="text-center">Works</h2>
-        <div class="works-box"><a href="#"><img src="./images/img_work_site.png" alt="株式会社きらめき コーポレートサイト様 Webサイトデザイン">
+        <div class="works-box">
+          <a href="#">
+            <img src="./images/img_work_site.png" alt="株式会社きらめき コーポレートサイト様 Webサイトデザイン">
             <div class="works-box-inner">
               <div class="text-center">
-                <h3>株式会社きらめき コーポレートサイト</h3><small>2016.04.20</small><span class="button-readmore">Read More</span>
+                <h3>株式会社きらめき コーポレートサイト</h3>
+                <small>2016.04.20</small>
+                <span class="button-readmore">Read More</span>
               </div>
-            </div></a></div>
+            </div>
+          </a>
+        </div>
         <div class="works-box"><a href="#"><img src="./images/img_work_card.jpg" alt="きらめき花子様 名刺デザイン">
             <div class="works-box-inner">
               <div class="text-center">
@@ -95,13 +98,13 @@
                 <h3>ブログデザイン</h3><small>2016.04.20</small><span class="button-readmore">Read More</span>
               </div>
             </div></a></div>
-      </section><!--contact-->
+      </section><!--works-->
       <section id="contact">
         <h2 class="text-center">Contact</h2>
         <ul>
-          <li class="mail"><a href="mailto:seedlingf21.k.n.p@icloud.com"><i class="fas fa-envelope" aria-label="お問い合わせ"></i></a></li>
-          <li class="github"><a href="https://github.com/Kanae21"><i class="fab fa-github" aria-label="Github"></i></a></li>
-          <li class="instagram"><a href="https://www.instagram.com/kanae_hayashiyama/"><i class="fab fa-instagram" aria-label="Instagramせ"></i></a></li>
+          <li class="mail"><a href="mailto:seedlingf21.k.n.p@icloud.com"><i aria-hidden="true" class="fa fa-envelope" aria-label="お問い合わせ"></i></a></li>
+          <li class="github"><a href="https://kanae21.github.io/"><i aria-hidden="true" class="fa fa-github-square" aria-label="Github"></i></a></li>
+          <li class="instagram"><a href="https://www.instagram.com/kanae_hayashiyama/"><i class="fa fa-instagram" aria-label="Instagramせ"></i></a></li>
         </ul>
       </section>
     </main><!--footer-->

@@ -1,0 +1,221 @@
+[1mdiff --git a/css/style.css b/css/style.css[m
+[1mindex 1beeeba..b2207c6 100644[m
+[1m--- a/css/style.css[m
+[1m+++ b/css/style.css[m
+[36m@@ -85,9 +85,9 @@[m [msection h2,[m
+ .button-contact[m
+ {[m
+     font-size: 20px;[m
+[31m-    line-height: 0;[m
+[32m+[m[32m    line-height: 0;  /*初期値：normalだとブラウザが判断して行の高さを決定する*/[m
+ [m
+[31m-    display: block;[m
+[32m+[m[32m    /*display: block;*/[m
+     float: right;[m
+ [m
+     width: 20px;[m
+[36m@@ -159,7 +159,7 @@[m [msection[m
+ }[m
+ section .container[m
+ {[m
+[31m-    width: 90%;[m
+[32m+[m[32m    width: 90%;/* sectionの中のインナーボックスをウィンドウ幅に対して90%に */[m
+ }[m
+ section h2[m
+ {[m
+[36m@@ -173,10 +173,11 @@[m [msection h2[m
+ }[m
+ #skills .container[m
+ {[m
+[31m-    display: -webkit-flex;[m
+[32m+[m[32m    display: -webkit-flex;/* ベンダープレフィックス */[m
+     display:         flex;[m
+ [m
+     justify-content: space-between;[m
+[32m+[m
+ }[m
+ #skills h2[m
+ {[m
+[36m@@ -188,6 +189,9 @@[m [msection h2[m
+     -webkit-box-sizing: border-box;[m
+        -moz-box-sizing: border-box;[m
+             box-sizing: border-box;[m
+[32m+[m[32m    /*-webkit-flex: 1;*/[m
+[32m+[m[32m    /*        flex: 1;*/[m
+[32m+[m[32m    /*margin: 0px 10px;*/[m
+     width: 32%;[m
+     padding: 20px;[m
+ [m
+[36m@@ -198,7 +202,6 @@[m [msection h2[m
+ }[m
+ #skills i[m
+ {[m
+[31m-    font-size: 45px;[m
+     font-size: 4.5rem;[m
+ [m
+     -webkit-box-sizing: border-box;[m
+[36m@@ -207,8 +210,8 @@[m [msection h2[m
+     width: 80px;[m
+     height: 80px;[m
+     margin-bottom: 5px;[m
+[31m-    padding-top: 15px;[m
+[31m-[m
+[32m+[m[32m    padding-top: 16px;[m
+[32m+[m[32m    padding-left: 2px;[m
+     text-align: center;[m
+ [m
+     color: #fff;[m
+[36m@@ -217,9 +220,17 @@[m [msection h2[m
+             border-radius: 50%;[m
+     background-color: #14c0c9;[m
+ }[m
+[32m+[m[32m#skills .desktop i[m
+[32m+[m[32m{[m
+[32m+[m[32m    padding-top: 19px;[m
+[32m+[m[32m}[m
+[32m+[m[32m#skills .pencil i[m
+[32m+[m[32m{[m
+[32m+[m[32m    padding: 18px 0 0 6px;[m
+[32m+[m[32m}[m
+[32m+[m
+ #skills h3[m
+ {[m
+[31m-    font-size: 24px;[m
+     font-size: 2.4rem;[m
+     font-weight: bold;[m
+ [m
+[36m@@ -227,7 +238,6 @@[m [msection h2[m
+ [m
+     color: #593639;[m
+ }[m
+[31m-[m
+ #works[m
+ {[m
+     padding-bottom: 0;[m
+[36m@@ -277,7 +287,6 @@[m [msection h2[m
+ }[m
+ #works .works-box a .works-box-inner h3[m
+ {[m
+[31m-    font-size: 16px;[m
+     font-size: 1.6rem;[m
+     font-weight: bold;[m
+ [m
+[36m@@ -285,7 +294,6 @@[m [msection h2[m
+ }[m
+ #works .works-box a .works-box-inner small[m
+ {[m
+[31m-    font-size: 10px;[m
+     font-size: 1rem;[m
+ [m
+     display: block;[m
+[36m@@ -294,7 +302,6 @@[m [msection h2[m
+ }[m
+ #works .works-box a .works-box-inner .button-readmore[m
+ {[m
+[31m-    font-size: 10px;[m
+     font-size: 1rem;[m
+     font-weight: bold;[m
+ [m
+[36m@@ -361,7 +368,6 @@[m [msection h2[m
+ {[m
+     margin-right: 0;[m
+ }[m
+[31m-#contact ul .mail,[m
+ #contact ul .github,[m
+ #contact ul .instagram[m
+ {[m
+[36m@@ -371,6 +377,7 @@[m [msection h2[m
+ #contact ul .github i[m
+ {[m
+     margin-left: 2px;[m
+[32m+[m[32m    text-align: center;[m
+ }[m
+ #contact ul a[m
+ {[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 29afd9f..896e12b 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -7,15 +7,13 @@[m
+     <meta name="keywords" content="Web, デザイン, デザイナー, ポートフォリオ, Web制作">[m
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">[m
+     <link rel="stylesheet" href="./css/style.css">[m
+[31m-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>[m
+[31m-    <script>FontAwesomeConfig = { autoReplaceSvg: 'nest' }[m
+[31m-    </script>[m
+[32m+[m[32m    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">[m
+   </head>[m
+   <body><!--header-->[m
+[31m-    <header><a href="#contact" class="button-contact"><i aria-hidden="true" class="fas fa-envelope" aria-label="お問い合わせ"></i></a>[m
+[32m+[m[32m    <header><a href="#contact" class="button-contact"><i aria-hidden="true" class="fa fa-envelope" aria-label="お問い合わせ"></i></a>[m
+       <div class="profile">[m
+         <h1 class="site-title abel uppercase text-center">Web Designer <span>Kanae</span></h1><img src="./images/img_profile.jpg" alt="プロフィール写真" width="140" height="140" class="block-center profile-icon">[m
+[31m-        <p>東京都在住のWebデザイナー、かなえです。オンラインスクールでWeb制作について学び、アパレル業界から憧れていたWebデザイナーへと転職活動中です。これからさらにWeb制作の技術や知識を身につけて、Webサイト運用や問題解決のアドバイスもできるデザイナーになりたいと思っています。</p>[m
+[32m+[m[32m        <p>富山在住のWebデザイナー、かなえです。オンラインスクールでWeb制作について学び、転職活動中です。</p>[m
+       [m
+       </div>[m
+     </header><!--contents-->[m
+[36m@@ -23,30 +21,35 @@[m
+       <section id="skills">[m
+         <h2 class="text-center">Skills</h2>[m
+         <div class="container">[m
+[31m-          <div class="skill-box">[m
+[31m-[m
+[31m-                <i class="fas fa-desktop" data-fa-mask=""></i>[m
+[32m+[m[32m          <div class="skill-box desktop">[m
+[32m+[m[32m                <i class="fa fa-desktop" aria-hidden="true"></i>[m
+             <h3 class="text-center">Web</h3>[m
+             <p>HTML/CSSでのコーディングができます。JavaScript、PHP、WordPressも現在勉強中です。</p>[m
+           </div>[m
+[31m-          <div class="skill-box"><i class="fas fa-pencil-alt"></i>[m
+[32m+[m[32m          <div class="skill-box pencil"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>[m
+             <h3 class="text-center">Illust</h3>[m
+[31m-            <p>キャラクターデザインなどのイラスト制作が得意です。専門学校在籍のときにXXの特別賞を受賞しました。</p>[m
+[32m+[m[32m            <p>美術大学で4年間絵画を学んでおり、家族のイラストが得意です。</p>[m
+           </div>[m
+[31m-          <div class="skill-box"><i class="fas fa-comment"></i>[m
+[32m+[m[32m          <div class="skill-box"><i class="fa fa-comment" aria-hidden="true"></i>[m
+             <h3 class="text-center">English</h3>[m
+             <p>16歳になるまでずっとアメリカにいたので英語が得意です。Webデザインも海外の記事を読んで勉強しています。</p>[m
+           </div>[m
+         </div>[m
+[31m-      </section><!--works-->[m
+[32m+[m[32m      </section><!--skills-->[m
+       <section id="works">[m
+         <h2 class="text-center">Works</h2>[m
+[31m-        <div class="works-box"><a href="#"><img src="./images/img_work_site.png" alt="株式会社きらめき コーポレートサイト様 Webサイトデザイン">[m
+[32m+[m[32m        <div class="works-box">[m
+[32m+[m[32m          <a href="#">[m
+[32m+[m[32m            <img src="./images/img_work_site.png" alt="株式会社きらめき コーポレートサイト様 Webサイトデザイン">[m
+             <div class="works-box-inner">[m
+               <div class="text-center">[m
+[31m-                <h3>株式会社きらめき コーポレートサイト</h3><small>2016.04.20</small><span class="button-readmore">Read More</span>[m
+[32m+[m[32m                <h3>株式会社きらめき コーポレートサイト</h3>[m
+[32m+[m[32m                <small>2016.04.20</small>[m
+[32m+[m[32m                <span class="button-readmore">Read More</span>[m
+               </div>[m
+[31m-            </div></a></div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m          </a>[m
+[32m+[m[32m        </div>[m
+         <div class="works-box"><a href="#"><img src="./images/img_work_card.jpg" alt="きらめき花子様 名刺デザイン">[m
+             <div class="works-box-inner">[m
+               <div class="text-center">[m
+[36m@@ -95,13 +98,13 @@[m
+                 <h3>ブログデザイン</h3><small>2016.04.20</small><span class="button-readmore">Read More</span>[m
+               </div>[m
+             </div></a></div>[m
+[31m-      </section><!--contact-->[m
+[32m+[m[32m      </section><!--works-->[m
+       <section id="contact">[m
+         <h2 class="text-center">Contact</h2>[m
+         <ul>[m
+[31m-          <li class="mail"><a href="mailto:seedlingf21.k.n.p@icloud.com"><i class="fas fa-envelope" aria-label="お問い合わせ"></i></a></li>[m
+[31m-          <li class="github"><a href="https://github.com/Kanae21"><i class="fab fa-github" aria-label="Github"></i></a></li>[m
+[31m-          <li class="instagram"><a href="https://www.instagram.com/kanae_hayashiyama/"><i class="fab fa-instagram" aria-label="Instagramせ"></i></a></li>[m
+[32m+[m[32m          <li class="mail"><a href="mailto:seedlingf21.k.n.p@icloud.com"><i aria-hidden="true" class="fa fa-envelope" aria-label="お問い合わせ"></i></a></li>[m
+[32m+[m[32m          <li class="github"><a href="https://kanae21.github.io/"><i aria-hidden="true" class="fa fa-github-square" aria-label="Github"></i></a></li>[m
+[32m+[m[32m          <li class="instagram"><a href="https://www.instagram.com/kanae_hayashiyama/"><i class="fa fa-instagram" aria-label="Instagramせ"></i></a></li>[m
+         </ul>[m
+       </section>[m
+     </main><!--footer-->[m

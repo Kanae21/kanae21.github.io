@@ -85,9 +85,9 @@ section h2,
 .button-contact
 {
     font-size: 20px;
-    line-height: 0;
+    line-height: 0;  /*初期値：normalだとブラウザが判断して行の高さを決定する*/
 
-    display: block;
+    /*display: block;*/
     float: right;
 
     width: 20px;
@@ -159,7 +159,7 @@ section
 }
 section .container
 {
-    width: 90%;
+    width: 90%;/* sectionの中のインナーボックスをウィンドウ幅に対して90%に */
 }
 section h2
 {
@@ -173,10 +173,11 @@ section h2
 }
 #skills .container
 {
-    display: -webkit-flex;
+    display: -webkit-flex;/* ベンダープレフィックス */
     display:         flex;
 
     justify-content: space-between;
+
 }
 #skills h2
 {
@@ -188,6 +189,9 @@ section h2
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    /*-webkit-flex: 1;*/
+    /*        flex: 1;*/
+    /*margin: 0px 10px;*/
     width: 32%;
     padding: 20px;
 
@@ -198,7 +202,6 @@ section h2
 }
 #skills i
 {
-    font-size: 45px;
     font-size: 4.5rem;
 
     -webkit-box-sizing: border-box;
@@ -207,8 +210,8 @@ section h2
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
-    padding-top: 15px;
-
+    padding-top: 16px;
+    padding-left: 2px;
     text-align: center;
 
     color: #fff;
@@ -217,9 +220,17 @@ section h2
             border-radius: 50%;
     background-color: #14c0c9;
 }
+#skills .desktop i
+{
+    padding-top: 19px;
+}
+#skills .pencil i
+{
+    padding: 18px 0 0 6px;
+}
+
 #skills h3
 {
-    font-size: 24px;
     font-size: 2.4rem;
     font-weight: bold;
 
@@ -227,7 +238,6 @@ section h2
 
     color: #593639;
 }
-
 #works
 {
     padding-bottom: 0;
@@ -277,7 +287,6 @@ section h2
 }
 #works .works-box a .works-box-inner h3
 {
-    font-size: 16px;
     font-size: 1.6rem;
     font-weight: bold;
 
@@ -285,7 +294,6 @@ section h2
 }
 #works .works-box a .works-box-inner small
 {
-    font-size: 10px;
     font-size: 1rem;
 
     display: block;
@@ -294,7 +302,6 @@ section h2
 }
 #works .works-box a .works-box-inner .button-readmore
 {
-    font-size: 10px;
     font-size: 1rem;
     font-weight: bold;
 
@@ -361,7 +368,6 @@ section h2
 {
     margin-right: 0;
 }
-#contact ul .mail,
 #contact ul .github,
 #contact ul .instagram
 {
@@ -371,6 +377,7 @@ section h2
 #contact ul .github i
 {
     margin-left: 2px;
+    text-align: center;
 }
 #contact ul a
 {
